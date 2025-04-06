@@ -58,7 +58,7 @@ A microservice-based platform for ingesting, enriching, and visualizing sensor d
 | Method | Endpoint           | Purpose                                 |
 |--------|--------------------|-----------------------------------------|
 | PUT    | `/enrich/{id}`     | Enrich a specific sensor record         |
-| PUT    | `/enrich-all`      | Enrich all non-enriched records         |
+| PUT    | `/enrich`      | Enrich all non-enriched records         |
 
 **Note:** Enrichment also runs automatically every 60 seconds for unenriched records.
 
