@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.4
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    networks:
+      - marija
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200 || exit 1"]
+      interval: 10s
+      retries: 5
+      start_period: 20s
+      timeout: 5s
+
+  sensoringestionservice:
+    build:
+      context: ./sensor_ingestion_service
+      dockerfile: Dockerfile
+    container_name: sensor_ingestion_service
+    ports:
+      - "8085:8085"
+    networks:
+      - marija
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    
+  enrichmentservice:
+    build:
+      context: ./enrichment_service
+      dockerfile: Dockerfile
+    container_name: enrichmentservice
+    ports:
+      - "8086:8086"
+    networks:
+      - marija
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.17.4
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    networks:
+      - marija
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+
+networks:
+  marija:
+    driver: bridge
+
+volumes:
+  esdata:
+    driver: local

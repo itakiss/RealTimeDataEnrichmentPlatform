@@ -1,0 +1,33 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+build/
+
+# Logs
+*.log
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Maven / Gradle
+.mvn/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+**/build/
+
+# Spring Boot specific
+application.yml
+application.properties
+

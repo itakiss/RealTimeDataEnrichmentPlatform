@@ -1,0 +1,10 @@
+{ "index": { "_index": "weather" } }
+{ "id": "4f8j5d3dk5yfg75dhrhird","timestamp": "2025-04-03T22:40:55.704Z", "latitude": 34.0522, "longitude": -118.2437, "temperature": 17.5, "enriched": false }
+{ "index": { "_index": "weather" } }
+{ "id": "JpSafdgsjhyfg75dhrhird","timestamp": "2025-04-03T22:41:10.123Z", "latitude": 34.0522, "longitude": -118.2433, "temperature": 15.3, "enriched": false }
+{ "index": { "_index": "weather" } }
+{ "id": "JpSafdgsjhyfgsg6reeeGU","timestamp": "2025-04-03T22:42:05.567Z", "latitude": 30.0522, "longitude": -118.2433, "temperature": 14.2, "enriched": false }
+{ "index": { "_index": "weather" } }
+{ "id": "JvSKAJYBPA3flavq6eGU","timestamp": "2025-04-03T22:43:30.890Z", "latitude": 30.0522, "longitude": -10.0000, "temperature": 18.4, "enriched": false }
+{ "index": { "_index": "weather" } }
+{ "id": "JfSKAJYBPjhs<fddteGU","timestamp": "2025-04-03T22:44:50.321Z", "latitude": 45.8150, "longitude": 15.9819, "temperature": 20.5, "enriched": false }
